@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", sans-serif;
+}
+
+body {
+  background: #fffbeb;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #fffbeb;
+  border: 1px solid #fffbeb;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #a2d2ff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 1s;
+}
+
+.message {
+  font-size: 12px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 1s;
+}
+
+.main {
+  padding: 50px 0;
+  width: 1148px;
+  margin: 0 auto;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 574px 574px;
+  row-gap: 20px;
+}
+
+article {
+  height: 360px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+article:nth-child(2n + 2) {
+  position: relative;
+  animation: slideRight 1.5s;
+  transition: all 1.5s ease-in;
+}
+
+article:nth-child(2n + 3) {
+  position: relative;
+  animation: slideLeft 1.5s;
+  transition: all 1.5s ease-in;
+}
+
+.details-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating-stars {
+  width: max-content;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.widget-svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.star-container {
+  padding: 0 2px !important;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-150px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    width: 100vw;
+  }
+
+  .grid {
+    grid-template-columns: 100vw;
+    gap: 0;
+  }
+
+  .mapContainer {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .map {
+    width: 96vw;
+    margin: 0 auto;
+    height: 360px;
+  }
+
+  article {
+    width: 100vw !important;
+    height: 300px;
+  }
+}
